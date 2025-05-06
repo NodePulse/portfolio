@@ -76,3 +76,26 @@ export const navLinks = [
     link: "#projects",
   },
 ];
+
+export const skills = [
+  {
+    id: 1,
+    name: "Three",
+    icon: "/images/logos/three.png",
+  },
+  {
+    id: 2,
+    name: "Python",
+    icon: "/images/logos/python.svg",
+  },
+  {
+    id: 3,
+    name: "Node JS",
+    icon: "/images/logos/node.png",
+  },
+  {
+    id: 4,
+    name: "React",
+    icon: "/images/logos/react.png",
+  },
+];
