@@ -8,14 +8,14 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ image, title, description, link }: ProjectCardProps) => (
-  <article className="relative w-[300px] max-w-sm bg-gray-800 rounded overflow-hidden shadow-lg group">
+  <article className="relative w-full max-w-sm bg-gray-800 rounded overflow-hidden shadow-lg group">
     <div className="absolute z-0 w-40 h-40 sm:w-60 sm:h-60 bg-[#cd3cf5] rounded-full blur-3xl opacity-50 -top-5 left-10" />
     <div className="relative z-10">
       <figure className="relative">
         <img
           src={image}
           alt={title}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-auto max-h-48 object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <a
           href={link}
@@ -57,7 +57,7 @@ const Projects = () => {
         <div
           data-aos="fade-up"
           data-aos-delay="500"
-          className="flex flex-wrap gap-4 justify-center mt-6"
+          className="flex flex-wrap gap-y-6 sm:gap-8 justify-center mt-6 px-2 sm:px-0"
         >
           {projects.map((project, index) => (
             <ProjectCard

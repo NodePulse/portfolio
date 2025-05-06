@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-20 text-white"
+      className="fixed top-0 left-0 w-full z-100 text-white"
       data-aos="fade-up"
       data-aos-delay="300"
     >

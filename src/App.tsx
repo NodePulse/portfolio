@@ -6,6 +6,7 @@ import Skills from "./sections/Skills";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 const App = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App = () => {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </>
   );
 };
