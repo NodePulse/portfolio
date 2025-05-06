@@ -99,3 +99,42 @@ export const skills = [
     icon: "/images/logos/react.png",
   },
 ];
+
+export const projects = [
+  {
+    name: "GPT-UI",
+    description: "Description 1",
+    image: "/images/projects/gpt-ui.png",
+    link: "https://react-gpt-ui.vercel.app/",
+  },
+  {
+    name: "TextUtils",
+    description: "Description 2",
+    image: "/images/projects/textutils.png",
+    link: "https://nodepulse.github.io/Text-React/",
+  },
+  {
+    name: "Google docs clone",
+    description: "Description 3",
+    image: "/images/projects/google-docs-clone.png",
+    link: "https://google-docs-clone-pied.vercel.app/",
+  },
+  {
+    name: "GPT-UI",
+    description: "Description 1",
+    image: "/images/projects/gpt-ui.png",
+    link: "https://react-gpt-ui.vercel.app/",
+  },
+  {
+    name: "TextUtils",
+    description: "Description 2",
+    image: "/images/projects/textutils.png",
+    link: "https://nodepulse.github.io/Text-React/",
+  },
+  {
+    name: "Google docs clone",
+    description: "Description 3",
+    image: "/images/projects/google-docs-clone.png",
+    link: "https://google-docs-clone-pied.vercel.app/",
+  },
+];
