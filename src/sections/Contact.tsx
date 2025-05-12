@@ -4,6 +4,7 @@ const Contact = () => {
       data-aos="fade-up"
       data-aos-delay="300"
       className="min-h-screen overflow-hidden flex items-center p-6 mt-10 relative justify-center"
+      id="contact"
     >
       <article className="shadow-lg rounded-lg flex flex-col md:flex-row max-w-4xl w-full relative">
         <aside className="w-full md:w-1/2 relative">

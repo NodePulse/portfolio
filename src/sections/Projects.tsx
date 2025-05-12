@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <main className="p-4">
       <section id="projects">
-        <div data-aos="fade-up" data-aos-delay="300">
+        <div data-aos="fade-up" data-aos-delay="300" className="pt-20">
           <header className="text-center">
             <h1 className="text-3xl text-white sm:text-4xl font-bold mb-6">
               My <span className="text-purple-400">Projects</span>

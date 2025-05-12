@@ -1,19 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-100 text-white"
+      className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}
       data-aos="fade-up"
       data-aos-delay="300"
     >
-      <div className="container mx-auto flex items-center justify-between p-5">
-        <a href="#home" className="text-4xl font-bold italic text-white">
-          Portfolio
+      <div className="inner">
+        <a href="#home" className="logo">
+          Sachin Bharbey
         </a>
         <button
           className="md:hidden focus:outline-none"
@@ -22,20 +34,24 @@ const Navbar = () => {
           <FiMenu className="w-8 h-8 text-white" />
         </button>
 
-        <nav className="hidden md:flex items-center space-x-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.link}
-              className="text-lg hover:text-gray-200"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-purple-800 rounded-full text-lg">
-            Contact
-          </button>
+        <nav className="desktop">
+          <ul>
+            {navLinks.map((link) => (
+              <li key={link.id} className="group">
+                <a href={link.link}>
+                  <span>{link.name}</span>
+                  <span className="underline" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
+
+        <a href="#contact" className="contact-btn group">
+          <div className="inner">
+            <span>Contact me</span>
+          </div>
+        </a>
       </div>
 
       <div

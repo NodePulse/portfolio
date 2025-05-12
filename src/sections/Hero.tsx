@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import Button from "../components/Button";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
+// import HeroExperience from "../components/models/hero_models/HeroExperience";
 import { words } from "../constants";
 import gsap from "gsap";
 
@@ -58,9 +58,7 @@ const Hero = () => {
         </header>
 
         <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
-          </div>
+          <div className="hero-3d-layout">{/* <HeroExperience /> */}</div>
         </figure>
       </div>
     </section>
