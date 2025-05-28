@@ -27,12 +27,23 @@ const Navbar = () => {
         <a href="#home" className="logo">
           Sachin Bharbey
         </a>
-        <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <FiMenu className="w-8 h-8 text-white" />
-        </button>
+        {
+          isOpen ? (
+            <button
+              className="md:hidden text-white cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              <FiX className="w-8 h-8" />
+            </button>
+          ) : (
+            <button
+              className="md:hidden text-white cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            >
+              <FiMenu className="w-8 h-8" />
+            </button>
+          )
+        }
 
         <nav className="desktop">
           <ul>
@@ -47,7 +58,10 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="contact-btn group">
+        <a
+          href="#contact"
+          className="contact-btn group hidden md:block focus:outline-none"
+        >
           <div className="inner">
             <span>Contact me</span>
           </div>
@@ -55,29 +69,30 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } md:hidden bg-[#801b9c] absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center space-y-8 pt-16`}
+        className={`${isOpen ? "block" : "hidden"
+          } md:hidden bg-[#031B34] absolute top-10 right-4 min-w-[210px] flex flex-col mt-4 items-center justify-center space-y-8 p-2 rounded-lg scale-up-center py-8`}
       >
-        <button
-          className="absolute top-5 right-5 text-white"
+        <div className='flex flex-col gap-y-4'>
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.link}
+              className="text-lg leading-[25px] text-white hover:text-gray-300 cursor-pointer font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+        <a
+          href="#contact"
+          className="contact-btn group focus:outline-none"
           onClick={() => setIsOpen(false)}
         >
-          <FiX className="w-8 h-8" />
-        </button>
-        {navLinks.map((link) => (
-          <a
-            key={link.id}
-            href={link.link}
-            className="text-lg text-white hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            {link.name}
-          </a>
-        ))}
-        <button className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-purple-800 rounded-full text-lg">
-          Contact
-        </button>
+          <div className="inner">
+            <span>Contact me</span>
+          </div>
+        </a>
       </div>
     </header>
   );

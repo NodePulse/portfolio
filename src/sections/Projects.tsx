@@ -40,10 +40,10 @@ const ProjectCard = ({ image, title, description, link }: ProjectCardProps) => (
 
 const Projects = () => {
   return (
-    <main className="p-4">
+    <main className="">
       <section id="projects">
         <div data-aos="fade-up" data-aos-delay="300" className="pt-20">
-          <header className="text-center">
+          <header className="text-center mx-2">
             <h1 className="text-3xl text-white sm:text-4xl font-bold mb-6">
               My <span className="text-purple-400">Projects</span>
             </h1>
@@ -57,7 +57,7 @@ const Projects = () => {
         <div
           data-aos="fade-up"
           data-aos-delay="500"
-          className="flex flex-wrap gap-y-6 sm:gap-8 justify-center mt-6 px-2 sm:px-0"
+          className="flex flex-wrap gap-y-6 sm:gap-8 justify-center mt-6 px-2 sm:px-0 mx-auto"
         >
           {projects.map((project, index) => (
             <ProjectCard
