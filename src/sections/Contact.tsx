@@ -5,14 +5,12 @@ import toast from "react-hot-toast";
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [isSending, setIsSending] = useState(false);
-  const [sent, setSent] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.current) return;
 
     setIsSending(true);
-    setSent(false);
 
     emailjs
       .sendForm(
@@ -23,7 +21,6 @@ const Contact = () => {
       )
       .then(
         () => {
-          setSent(true);
           toast.success("Message sent successfully! 🎉")
           form.current?.reset();
         },
