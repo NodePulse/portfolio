@@ -78,63 +78,199 @@ export const navLinks = [
 ];
 
 export const skills = [
+  // Development Skills
   {
     id: 1,
-    name: "Three",
-    icon: "/images/logos/three.png",
+    name: "React",
+    icon: "/images/logos/react.png",
+    category: "development",
   },
   {
     id: 2,
-    name: "Python",
-    icon: "/images/logos/python.svg",
+    name: "Node.js",
+    icon: "/images/logos/node.png",
+    category: "development",
   },
   {
     id: 3,
-    name: "Node JS",
-    icon: "/images/logos/node.png",
+    name: "Python",
+    icon: "/images/logos/python.svg",
+    category: "development",
   },
   {
     id: 4,
-    name: "React",
-    icon: "/images/logos/react.png",
+    name: "TypeScript",
+    icon: "/images/logos/typescript.svg",
+    category: "development",
+  },
+  {
+    id: 11,
+    name: "Next.js",
+    icon: "/images/logos/nextJs.svg",
+    category: "development",
+  },
+  {
+    id: 12,
+    name: "GraphQL",
+    icon: "/images/logos/graphql.png",
+    category: "development",
+  },
+  {
+    id: 13,
+    name: "Docker",
+    icon: "/images/logos/docker.png",
+    category: "development",
+  },
+  {
+    id: 14,
+    name: "MongoDB",
+    icon: "/images/logos/mongodb.svg",
+    category: "development",
+  },
+
+  // Data Science Skills
+  {
+    id: 5,
+    name: "TensorFlow",
+    icon: "/images/logos/tensorflow.png",
+    category: "data-science",
+  },
+  {
+    id: 6,
+    name: "PyTorch",
+    icon: "/images/logos/pytorch.png",
+    category: "data-science",
+  },
+  {
+    id: 7,
+    name: "Scikit-learn",
+    icon: "/images/logos/scikit-learn.png",
+    category: "data-science",
+  },
+  {
+    id: 8,
+    name: "Pandas",
+    icon: "/images/logos/pandas.png",
+    category: "data-science",
+  },
+  {
+    id: 15,
+    name: "NumPy",
+    icon: "/images/logos/numpy.png",
+    category: "data-science",
+  },
+  {
+    id: 16,
+    name: "Matplotlib",
+    icon: "/images/logos/matplotlib.png",
+    category: "data-science",
+  },
+  {
+    id: 17,
+    name: "Seaborn",
+    icon: "/images/logos/seaborn.png",
+    category: "data-science",
+  },
+  {
+    id: 18,
+    name: "Jupyter Notebook",
+    icon: "/images/logos/jupyter.png",
+    category: "data-science",
+  },
+
+  // Others
+  {
+    id: 9,
+    name: "Git",
+    icon: "/images/logos/git.png",  // update icon path
+    category: "others",
+  },
+  {
+    id: 10,
+    name: "Linux",
+    icon: "/images/logos/linux.png",  // update icon path
+    category: "others",
+  },
+  {
+    id: 19,
+    name: "AWS",
+    icon: "/images/logos/aws.png",
+    category: "others",
+  },
+  {
+    id: 20,
+    name: "Firebase",
+    icon: "/images/logos/firebase.png",
+    category: "others",
+  },
+  {
+    id: 21,
+    name: "VS Code",
+    icon: "/images/logos/vscode.png",
+    category: "others",
+  },
+  {
+    id: 22,
+    name: "Jenkins",
+    icon: "/images/logos/jenkins.png",
+    category: "others",
   },
 ];
 
+
 export const projects = [
   {
+    id: 1,
     name: "GPT-UI",
     description: "Description 1",
     image: "/images/projects/gpt-ui.png",
     link: "https://react-gpt-ui.vercel.app/",
+    category: "development",
+    github: "" // Add category property for developmen
   },
   {
+    id: 2,
     name: "TextUtils",
     description: "Description 2",
     image: "/images/projects/textutils.png",
     link: "https://nodepulse.github.io/Text-React/",
+    category: "development",
+    github: ""
   },
   {
+    id: 3,
     name: "Google docs clone",
     description: "Description 3",
     image: "/images/projects/google-docs-clone.png",
     link: "https://google-docs-clone-pied.vercel.app/",
+    category: "development",
+    github: ""
   },
   {
+    id: 4,
     name: "GPT-UI",
     description: "Description 1",
     image: "/images/projects/gpt-ui.png",
     link: "https://react-gpt-ui.vercel.app/",
+    category: "development",
+    github: ""
   },
   {
+    id: 5,
     name: "TextUtils",
     description: "Description 2",
     image: "/images/projects/textutils.png",
     link: "https://nodepulse.github.io/Text-React/",
+    category: "data-science",
+    github: ""
   },
   {
+    id: 6,
     name: "Google docs clone",
     description: "Description 3",
     image: "/images/projects/google-docs-clone.png",
     link: "https://google-docs-clone-pied.vercel.app/",
+    category: "data-science",
+    github: ""
   },
 ];

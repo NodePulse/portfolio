@@ -81,11 +81,11 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 h-[80vh] flex xl:items-center items-start justify-center;
+    @apply relative z-10 xl:mt-20 mt-32 h-[80vh] max-sm:h-fit max-sm:mb-20 flex xl:items-center items-start justify-center;
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center md:text-[60px] text-[40px] font-semibold relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -106,7 +106,7 @@ section {
     @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100];
 
     &.scrolled {
-      @apply top-0 bg-black;
+      @apply top-0 bg-gray-950/50 backdrop-blur-sm;
     }
 
     &.not-scrolled {
@@ -278,24 +278,6 @@ section {
     @apply flex justify-center items-center w-52 h-60 relative;
   }
 
-  form {
-    label {
-      @apply block text-white-50 mb-2;
-    }
-
-    input,
-    textarea {
-      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
-    }
-
-    a {
-      @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
-
-      img {
-        @apply inline-block;
-      }
-    }
-  }
 
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
@@ -498,4 +480,23 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-carousel-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 25s linear infinite;
+}
+
+.skills-carousel-wrapper:hover .skills-carousel-track {
+  animation-play-state: paused;
 }

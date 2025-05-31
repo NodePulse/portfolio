@@ -14,7 +14,7 @@ const Hero = () => {
   });
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden bg-gray-950">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="background" />
       </div>
@@ -46,7 +46,7 @@ const Hero = () => {
               <h1>into Real Projects</h1>
               <h1>that deliver Results</h1>
             </div>
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+            <p className="text-white-50 text-lg md:text-xl relative z-10 pointer-events-none">
               Hi, I am Sachin, a developer from India with a passion for code.
             </p>
             <Button
@@ -56,7 +56,6 @@ const Hero = () => {
             />
           </div>
         </header>
-
       </div>
     </section>
   );
