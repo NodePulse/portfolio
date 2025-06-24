@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { Octokit } from "octokit";
-import type { components } from "@octokit/openapi-types";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const OWNER = process.env.OWNER;
