@@ -11,13 +11,8 @@ import Projects from "@/sections/Projects";
 import Contact from "@/sections/Contact";
 import Footer from "@/components/Footer";
 // import Chatbot from "@/components/Chatbot";
-import { useAppContext } from "@/context/AppContext";
 
 export default function Home() {
-
-  const { projects } = useAppContext()
-  console.log(projects)
-
   useEffect(() => {
     AOS.init({
       duration: 700,

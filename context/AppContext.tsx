@@ -71,7 +71,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         fetchData();
     }, []);
 
-    // ✅ Show full-page loading screen while fetching
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-black text-white">

@@ -96,63 +96,89 @@
 //         </>
 //     );
 // }
-import { motion, animate, useMotionValue, useTransform } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+// import { motion, animate, useMotionValue, useTransform } from 'framer-motion';
+// import { useEffect, useRef } from 'react';
 
-export default function Chatbot() {
-    const pathRef = useRef<SVGPathElement>(null);
-    const progress = useMotionValue(0);
+// export default function Chatbot() {
+//     const pathRef = useRef<SVGPathElement>(null);
+//     const progress = useMotionValue(0);
 
-    const x = useTransform(progress, (p) => {
-        if (!pathRef.current) return 0;
-        const len = pathRef.current.getTotalLength();
-        const point = pathRef.current.getPointAtLength(p * len);
-        return point.x;
-    });
+//     const x = useTransform(progress, (p) => {
+//         if (!pathRef.current) return 0;
+//         const len = pathRef.current.getTotalLength();
+//         const point = pathRef.current.getPointAtLength(p * len);
+//         return point.x;
+//     });
 
-    const y = useTransform(progress, (p) => {
-        if (!pathRef.current) return 0;
-        const len = pathRef.current.getTotalLength();
-        const point = pathRef.current.getPointAtLength(p * len);
-        return point.y;
-    });
+//     const y = useTransform(progress, (p) => {
+//         if (!pathRef.current) return 0;
+//         const len = pathRef.current.getTotalLength();
+//         const point = pathRef.current.getPointAtLength(p * len);
+//         return point.y;
+//     });
 
-    useEffect(() => {
-        const controls = animate(progress, 1, {
-            duration: 3,
-            ease: "easeInOut"
+//     useEffect(() => {
+//         const controls = animate(progress, 1, {
+//             duration: 3,
+//             ease: "easeInOut"
+//         });
+
+//         return () => controls.stop();
+//     }, [progress]);
+
+//     return (
+//         <>
+//             <svg width="0" height="0" style={{ position: 'absolute' }}>
+//                 <path
+//                     ref={pathRef}
+//                     d="M -200 -200 C -150 -150, -100 -100, 0 0"
+//                     fill="none"
+//                     stroke="transparent"
+//                 />
+//             </svg>
+
+//             <motion.div
+//                 style={{
+//                     position: 'fixed',
+//                     bottom: 0,
+//                     right: 0,
+//                     x,
+//                     y,
+//                     fontSize: '3rem',
+//                     color: 'deepskyblue',
+//                     cursor: 'pointer',
+//                     zIndex: 100,
+//                 }}
+//                 aria-label="Flying bird"
+//             >
+//                 🐦
+//             </motion.div>
+//         </>
+//     );
+// }
+
+"use client";
+import { useState } from "react";
+
+export default function ChatWidget() {
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState("");
+
+    async function handleAsk() {
+        const res = await fetch("/api/chat", {
+            method: "POST",
+            body: JSON.stringify({ question }),
         });
-
-        return () => controls.stop();
-    }, [progress]);
+        const data = await res.json();
+        setAnswer(data.answer);
+    }
 
     return (
-        <>
-            <svg width="0" height="0" style={{ position: 'absolute' }}>
-                <path
-                    ref={pathRef}
-                    d="M -200 -200 C -150 -150, -100 -100, 0 0"
-                    fill="none"
-                    stroke="transparent"
-                />
-            </svg>
-
-            <motion.div
-                style={{
-                    position: 'fixed',
-                    bottom: 0,
-                    right: 0,
-                    x,
-                    y,
-                    fontSize: '3rem',
-                    color: 'deepskyblue',
-                    cursor: 'pointer',
-                    zIndex: 100,
-                }}
-                aria-label="Flying bird"
-            >
-                🐦
-            </motion.div>
-        </>
+        <div className="chatbox">
+            <textarea value={question} onChange={e => setQuestion(e.target.value)} />
+            <button onClick={handleAsk}>Ask</button>
+            <div className="response">{answer}</div>
+        </div>
     );
 }
+
