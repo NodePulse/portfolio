@@ -53,8 +53,8 @@ export async function GET() {
                         .join("\n\n");
                     fileContents.push({ path: file.path, content: cellText });
                 }
-            } catch (err) {
-                console.error(`Failed to parse .ipynb file: ${file.path}`);
+            } catch (error) {
+                console.error(`Failed to parse .ipynb file: ${file.path}`, error);
             }
         } else {
             fileContents.push({ path: file.path, content: decoded });
