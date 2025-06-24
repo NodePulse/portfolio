@@ -5,13 +5,14 @@ import {
     FaLinkedin,
     FaEnvelope,
     FaTwitter,
+    FaYoutube,
+    FaDev,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME
-const LINKEDIN_USERNAME = process.env.NEXT_PUBLIC_LINKEDIN_USERNAME
-const EMAIL_ID = process.env.NEXT_PUBLIC_EMAIL_ID
-const X_USERNAME = process.env.NEXT_PUBLIC_X_USERNAME
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME
+const LINKEDIN_USERNAME = process.env.LINKEDIN_USERNAME
+const EMAIL_ID = process.env.EMAIL_ID
 
 const Footer = () => {
     return (
@@ -47,22 +48,22 @@ const Footer = () => {
                     {[
                         {
                             icon: <FaGithub />,
-                            href: `https://github.com/${GITHUB_USERNAME}`,
+                            href: "https://github.com/NodePulse",
                             title: "GitHub",
                         },
                         {
                             icon: <FaLinkedin />,
-                            href: `https://linkedin.com/in/${LINKEDIN_USERNAME}`,
+                            href: "https://linkedin.com/in/sachin-bharbey-b128a4242",
                             title: "LinkedIn",
                         },
                         {
                             icon: <FaEnvelope />,
-                            href: `mailto:${EMAIL_ID}`,
+                            href: "mailto:bharbeysachin@gmail.com",
                             title: "Email",
                         },
                         {
                             icon: <FaTwitter />,
-                            href: `https://twitter.com/@${X_USERNAME}`,
+                            href: "https://twitter.com/sachin_bh31",
                             title: "Twitter",
                         },
                     ].map(({ icon, href, title }) => (
