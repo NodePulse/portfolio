@@ -3,8 +3,11 @@ import { useGSAP } from "@gsap/react"
 import gsap from 'gsap'
 import { words } from '@/constants'
 import Button from '@/components/Button'
+import { useRouter } from 'next/navigation'
 
 const Hero = () => {
+
+    const router = useRouter()
 
     useGSAP(() => {
         gsap.fromTo(
@@ -50,11 +53,31 @@ const Hero = () => {
                         <p className="text-white-50 text-lg md:text-xl relative z-10 pointer-events-none">
                             Hi, I am Sachin, a developer from India with a passion for code.
                         </p>
-                        <Button
+                        {/* <Button
                             className="md:w-80 md:h-16 w-60 h-12"
                             id="button"
                             text="See my Work"
-                        />
+                        /> */}
+                        <div className="flex flex-wrap items-center gap-4 z-10">
+                            <button
+                                onClick={() => router.push("/resume")}
+                                className="bg-white text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-md transition duration-300 hover:bg-gray-200 hover:cursor-pointer"
+                            >
+                                See Resume
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    const link = document.createElement("a");
+                                    link.href = "/resume.pdf";
+                                    link.download = "Sachin_Resume.pdf";
+                                    link.click();
+                                }}
+                                className="bg-transparent border border-white text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-md transition duration-300 hover:bg-white hover:text-black hover:cursor-pointer"
+                            >
+                                Download Resume
+                            </button>
+                        </div>
                     </div>
                 </header>
             </div>
