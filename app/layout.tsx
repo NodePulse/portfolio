@@ -61,8 +61,8 @@ export const metadata: Metadata = {
     title: "Sachin | Developer & Data Enthusiast",
     description:
       "Check out Sachin’s portfolio – full-stack developer and data science enthusiast with real-world projects.",
-    site: "@sachin_bh31",
-    creator: "@sachin_bh31",
+    site: `@${process.env.NEXT_PUBLIC_X_USERNAME}`,
+    creator: `@${process.env.NEXT_PUBLIC_X_USERNAME}`,
     // images: ["https://sachin-bharbey.vercel.app//og-image.png"],
   },
 };
