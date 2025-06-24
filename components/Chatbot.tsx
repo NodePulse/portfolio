@@ -157,28 +157,28 @@
 //     );
 // }
 
-"use client";
-import { useState } from "react";
+// "use client";
+// import { useState } from "react";
 
-export default function ChatWidget() {
-    const [question, setQuestion] = useState("");
-    const [answer, setAnswer] = useState("");
+// export default function ChatWidget() {
+//     const [question, setQuestion] = useState("");
+//     const [answer, setAnswer] = useState("");
 
-    async function handleAsk() {
-        const res = await fetch("/api/chat", {
-            method: "POST",
-            body: JSON.stringify({ question }),
-        });
-        const data = await res.json();
-        setAnswer(data.answer);
-    }
+//     async function handleAsk() {
+//         const res = await fetch("/api/chat", {
+//             method: "POST",
+//             body: JSON.stringify({ question }),
+//         });
+//         const data = await res.json();
+//         setAnswer(data.answer);
+//     }
 
-    return (
-        <div className="chatbox">
-            <textarea value={question} onChange={e => setQuestion(e.target.value)} />
-            <button onClick={handleAsk}>Ask</button>
-            <div className="response">{answer}</div>
-        </div>
-    );
-}
+//     return (
+//         <div className="chatbox">
+//             <textarea value={question} onChange={e => setQuestion(e.target.value)} />
+//             <button onClick={handleAsk}>Ask</button>
+//             <div className="response">{answer}</div>
+//         </div>
+//     );
+// }
 
