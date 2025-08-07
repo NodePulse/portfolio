@@ -33,6 +33,7 @@ const specialNameMap: Record<string, string> = {
   mysql: "MySQL",
   matplotlib: "Matplotlib",
   powerbi: "Power BI",
+  fastapi: "FastAPI"
 };
 
 function formatName(fileName: string): string {
