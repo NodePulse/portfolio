@@ -5,14 +5,8 @@ import {
     FaLinkedin,
     FaEnvelope,
     FaTwitter,
-    FaYoutube,
-    FaDev,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME
-const LINKEDIN_USERNAME = process.env.LINKEDIN_USERNAME
-const EMAIL_ID = process.env.EMAIL_ID
 
 const Footer = () => {
     return (
