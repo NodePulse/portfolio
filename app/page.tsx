@@ -10,7 +10,7 @@ import Skills from "@/sections/Skills";
 import Projects from "@/sections/Projects";
 import Contact from "@/sections/Contact";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
+// import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </div>
   );
 }
