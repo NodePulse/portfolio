@@ -111,7 +111,7 @@ const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSending}
-                                className={`w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 transition-all duration-300 text-white font-semibold py-2 rounded-full shadow-lg ${isSending && "opacity-50 cursor-not-allowed"
+                                className={`w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 transition-all duration-300 cursor-pointer text-white font-semibold py-2 rounded-full shadow-lg ${isSending && "opacity-50 cursor-not-allowed"
                                     }`}
                             >
                                 {isSending ? "Sending..." : "Send Message"}
